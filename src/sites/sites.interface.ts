@@ -62,3 +62,27 @@ export interface SiteItem extends SiteListItem {
   container_status: string;
   container_service_status: string;
 }
+
+export interface SiteCreateOptions {
+    /**
+     * Name of site
+     */
+    site_name: string;
+  
+    /**
+     * subscription id
+     */
+    subscription_id?: string;
+  
+    /**
+     * subscribed id
+     */
+    plan_id?: string;
+}
+
+export interface SiteDeleteOptions {
+    /**
+     * If you keep the subscription, should be true
+     */
+    remain_subscription?: boolean;
+}

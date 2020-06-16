@@ -95,4 +95,29 @@ export abstract class ShifterClient {
     const result = await this.client.get(url, conf);
     return result.data;
   }
+
+  /**
+   * Call POST API with token
+   * @param path 
+   * @param body 
+   * @param config 
+   */
+  protected async post<Request = any, Response = any>(path?: string, body?: Request, config?: AxiosRequestConfig): Promise<Response> {
+    const url = this.getAPIURL(path);
+    const conf = this.createRequestConfig(config);
+    const result = await this.client.post<Response>(url, body, conf);
+    return result.data;
+  }
+
+  /**
+   * Call DELETE API with token
+   * @param path 
+   * @param config 
+   */
+  protected async delete<Response = any>(path?: string, config?: AxiosRequestConfig): Promise<Response> {
+    const url = this.getAPIURL(path);
+    const conf = this.createRequestConfig(config);
+    const result = await this.client.delete<Response>(url, conf);
+    return result.data;
+  }
 }
