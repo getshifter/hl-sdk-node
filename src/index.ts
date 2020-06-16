@@ -4,6 +4,17 @@ import { Login } from './login';
 export * from './login';
 export * from './sites';
 
+/**
+ * Shifter Headless API Client
+ * @example
+ * ```typescript
+ * const shifter = new Shifter({
+ *    token: "SHIFTER_AUTH_TOKEN"
+ * })
+ * shifter.sites.lists()
+ *  .then(data => console.log(data))
+ * ```
+ */
 export class Shifter extends ShifterClient {
   /**
    * Site resource client
@@ -15,6 +26,21 @@ export class Shifter extends ShifterClient {
     this.sites = new Sites(conf);
   }
 
+  /**
+   * Create client with login by username and password
+   * @param username 
+   * @param password 
+   * @param options
+   * @example
+   * ```typescript
+   * Shifter.setupWithLogin('USERNAME', 'PASSWORD')
+   *   .then(client => {
+   *      client.sites.lists()
+   *        .then(data => console.log(data))
+   *   })
+   * 
+   * ```
+   */
   public static async setupWithLogin(
     username: string,
     password: string,
