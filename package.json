@@ -29,8 +29,17 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "headless-sdk",
-  "author": "Hidetaka Okamoto",
+  "name": "@shifter/headless-sdk",
+  "description": "Shifter Headless API SDK for Node.js",
+  "author": "Shifter <hello@getshifter.io> (https://getshifter.io)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getshifter/hl-sdk-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/getshifter/hl-sdk-node/issues"
+  },
+  "homepage": "https://github.com/getshifter/hl-sdk-node#readme",
   "module": "dist/headless-sdk.esm.js",
   "devDependencies": {
     "husky": "^4.2.5",
@@ -41,5 +50,8 @@
   },
   "dependencies": {
     "axios": "^0.19.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
