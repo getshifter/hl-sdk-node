@@ -31,7 +31,6 @@ export class Sites extends ShifterClient {
     return this.post<SiteCreateOptions, string>('', options);
   }
 
-
   /**
    * Retrieve Headless site detail
    * @param siteId
@@ -53,27 +52,27 @@ export class Sites extends ShifterClient {
 
   /**
    * Update the site name
-   * @param siteId 
+   * @param siteId
    */
   public async updateName(siteId: string, siteName: string): Promise<void> {
-      return this.put<SiteUpdateNameOptions,void>(siteId, {
-          site_name: siteName
-      })
+    return this.put<SiteUpdateNameOptions, void>(siteId, {
+      site_name: siteName,
+    });
   }
 
   /**
-   * Get initial login password 
-   * @param siteId 
+   * Get initial login password
+   * @param siteId
    */
   public async getInitialWPPassword(siteId: string): Promise<string> {
-      return this.get<string>(`${siteId}/wp/initial_password`)
+    return this.get<string>(`${siteId}/wp/initial_password`);
   }
 
   /**
    * Retry setup the WordPress
-   * @param siteId 
+   * @param siteId
    */
   public async retrySetup(siteId: string): Promise<string> {
-      return this.put<string>(`${siteId}/retry_setup`)
+    return this.put<string>(`${siteId}/retry_setup`);
   }
 }

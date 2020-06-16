@@ -1,8 +1,10 @@
 import { ShifterClient, ShifterConfig } from './client';
 import { Sites } from './sites';
 import { Login } from './login';
+import { SiteServices } from 'siteServices';
 export * from './login';
 export * from './sites';
+export * from './siteServices';
 
 /**
  * Shifter Headless API Client
@@ -21,9 +23,16 @@ export class Shifter extends ShifterClient {
    */
   public readonly sites: Sites;
 
+  /**
+   *
+   * SiteService resource client
+   */
+  public readonly siteServices: SiteServices;
+
   constructor(conf: ShifterConfig) {
     super(conf);
     this.sites = new Sites(conf);
+    this.siteServices = new SiteServices(conf);
   }
 
   /**

@@ -84,7 +84,7 @@ export interface SiteCreateOptions {
 }
 
 export interface SiteUpdateNameOptions {
-    site_name: string;
+  site_name: string;
 }
 
 /**
