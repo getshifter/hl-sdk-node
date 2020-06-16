@@ -1,5 +1,8 @@
 # Shifter Headless API SDK (beta)
 
+```bash
+npm install --save @shifter/headless-sdk
+```
 
 ## Usage
 
@@ -7,7 +10,10 @@
 
 If you integrated by OAuth2, we can use the authorization token.
 
+#### TypeScript
+
 ```typescript
+import {Shifter} from '@shifter/headless-sdk'
 const shifter = new Shifter({
    token: "SHIFTER_AUTH_TOKEN"
 })
@@ -15,15 +21,47 @@ shifter.sites.lists()
  .then(data => console.log(data))
 ```
 
+#### JavaScript
+
+```javascript
+const {Shifter} = require('@shifter/headless-sdk')
+
+const shifter = new Shifter({
+   token: "SHIFTER_AUTH_TOKEN"
+})
+shifter.sites.lists()
+ .then(data => console.log(data))
+```
+
+### Setup with username/password auth
+
 We can directory setup the client with username and password.
 
+#### TypeScript
+
 ```typescript
+import {Shifter} from '@shifter/headless-sdk'
 const shifter = await Shifter.setupWithLogin('USERNAME', 'PASSWORD')
 
 shifter.sites.lists()
  .then(data => console.log(data))
 ```
 
+#### JavaScript
+
+```javascript
+const {Shifter} = require('@shifter/headless-sdk')
+
+Shifter.setupWithLogin('USERNAME', 'PASSWORD')
+.then(shifter => {
+    shifter.sites.list()
+        .then(data => {
+            console.log(data)
+        }).catch(e => {
+            console.log(e)
+        })
+})
+```
 
 ## Development
 
