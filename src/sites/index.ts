@@ -1,2 +1,2 @@
-export * from './sites.class'
-export * from './sites.interface'
+export * from './sites.class';
+export * from './sites.interface';

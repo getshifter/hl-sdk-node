@@ -53,7 +53,7 @@ export interface SiteListItem {
 /**
  * Site List items
  */
-export type SiteListItems = Array<SiteListItem>
+export type SiteListItems = Array<SiteListItem>;
 
 /**
  * Retrieve Site item
