@@ -63,6 +63,9 @@ export interface SiteItem extends SiteListItem {
   container_service_status: string;
 }
 
+/**
+ * Site creation request options
+ */
 export interface SiteCreateOptions {
   /**
    * Name of site
@@ -80,6 +83,13 @@ export interface SiteCreateOptions {
   plan_id?: string;
 }
 
+export interface SiteUpdateNameOptions {
+    site_name: string;
+}
+
+/**
+ * Site deleting request options
+ */
 export interface SiteDeleteOptions {
   /**
    * If you keep the subscription, should be true

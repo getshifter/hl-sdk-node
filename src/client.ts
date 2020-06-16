@@ -114,6 +114,23 @@ export abstract class ShifterClient {
   }
 
   /**
+   * Call put API with token
+   * @param path
+   * @param body
+   * @param config
+   */
+  protected async put<Request = any, Response = any>(
+    path?: string,
+    body?: Request,
+    config?: AxiosRequestConfig
+  ): Promise<Response> {
+    const url = this.getAPIURL(path);
+    const conf = this.createRequestConfig(config);
+    const result = await this.client.put<Response>(url, body, conf);
+    return result.data;
+  }
+
+  /**
    * Call DELETE API with token
    * @param path
    * @param config
