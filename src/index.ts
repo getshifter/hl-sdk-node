@@ -1,7 +1,7 @@
 import { ShifterClient, ShifterConfig } from './client';
 import { Sites } from './sites';
 import { Login } from './login';
-import { SiteServices } from 'siteServices';
+import { SiteServices } from './siteServices';
 export * from './login';
 export * from './sites';
 export * from './siteServices';

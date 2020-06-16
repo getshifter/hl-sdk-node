@@ -57,7 +57,9 @@ export abstract class ShifterClient {
     const apiPath = [this.resource, path]
       .filter(item => !!item)
       .join('/')
-      .replace(/\/\//, '/');
+      .replace(/\/\//, '/')
+      .replace(/\/$/, '')
+      .replace(/^\//, '');
     return [this.endpoint, apiPath].join('/');
   }
 
