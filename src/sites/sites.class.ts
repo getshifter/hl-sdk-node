@@ -1,6 +1,11 @@
 import { ShifterClient, ShifterConfig } from '../client';
 
-import { SiteListItems, SiteItem, SiteCreateOptions, SiteDeleteOptions } from './sites.interface';
+import {
+  SiteListItems,
+  SiteItem,
+  SiteCreateOptions,
+  SiteDeleteOptions,
+} from './sites.interface';
 
 export class Sites extends ShifterClient {
   constructor(conf: ShifterConfig) {
@@ -27,20 +32,20 @@ export class Sites extends ShifterClient {
 
   /**
    * Create a new Headless Site
-   * @param options 
+   * @param options
    */
   public async create(options: SiteCreateOptions): Promise<string> {
-      return this.post<SiteCreateOptions, string>('', options)
+    return this.post<SiteCreateOptions, string>('', options);
   }
 
   /**
    * Delete the Headless Site
    * @param siteId
-   * @param options 
+   * @param options
    */
   public async del(siteId: string, options?: SiteDeleteOptions): Promise<void> {
     return this.delete<void>(siteId, {
-        data: options,
-    })
+      data: options,
+    });
   }
 }

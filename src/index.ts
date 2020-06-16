@@ -28,8 +28,8 @@ export class Shifter extends ShifterClient {
 
   /**
    * Create client with login by username and password
-   * @param username 
-   * @param password 
+   * @param username
+   * @param password
    * @param options
    * @example
    * ```typescript
@@ -38,7 +38,7 @@ export class Shifter extends ShifterClient {
    *      client.sites.lists()
    *        .then(data => console.log(data))
    *   })
-   * 
+   *
    * ```
    */
   public static async setupWithLogin(
