@@ -11,6 +11,8 @@
     "node": ">=10"
   },
   "scripts": {
+    "doc": "npx compodoc src -p ./tsconfig.json && touch documentation/.nojekyll",
+    "doc:serve": "yarn doc && npx compodoc src -p ./tsconfig.json -s",
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
