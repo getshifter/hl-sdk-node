@@ -2,9 +2,11 @@ import { ShifterClient, ShifterConfig } from './client';
 import { Sites } from './sites';
 import { Login } from './login';
 import { SiteServices } from './siteServices';
+import { getToken } from './oauth'
 export * from './login';
 export * from './sites';
 export * from './siteServices';
+export * from './oauth';
 
 /**
  * Shifter Headless API Client
@@ -63,6 +65,18 @@ export class Shifter extends ShifterClient {
       ...options,
       token: AccessToken,
     });
+  }
+
+  public static async setupWithOAuth() {
+    const tokens = await getToken()
+    console.log(tokens)
+    if (tokens.access_token) {
+      return new Shifter({
+        token: tokens.access_token
+      })
+    } else {
+      return null
+    }
   }
 }
 
