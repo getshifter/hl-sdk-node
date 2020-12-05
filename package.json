@@ -48,7 +48,7 @@
   "devDependencies": {
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
-    "husky": "4.3.0",
+    "husky": "4.3.4",
     "semantic-release": "17.3.0",
     "ts-node": "9.1.0",
     "tsdx": "0.14.1",
