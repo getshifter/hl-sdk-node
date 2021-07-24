@@ -46,8 +46,8 @@
   "homepage": "https://github.com/getshifter/hl-sdk-node#readme",
   "module": "dist/headless-sdk.esm.js",
   "devDependencies": {
-    "@commitlint/cli": "12.1.4",
-    "@commitlint/config-conventional": "12.1.4",
+    "@commitlint/cli": "13.1.0",
+    "@commitlint/config-conventional": "13.1.0",
     "husky": "7.0.1",
     "semantic-release": "17.4.4",
     "ts-node": "10.1.0",
