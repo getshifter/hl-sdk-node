@@ -11,11 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: "yarn install"
-        run: yarn install --frozen-lockfile
+      - name: "npm install"
+        run: npm ci
 
-      - name: "yarn semantic-release"
-        run: yarn semantic-release
+      - name: "npm semantic-release"
+        run: npm semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
